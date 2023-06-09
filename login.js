@@ -11,13 +11,13 @@ function openIndex() {
         password: passWord.value
     }
     localStorage.setItem("logindetails", JSON.stringify(loginDetails))
-    window.open("login.html")   
+    window.open("index.html")   
 }
 
 logIn.addEventListener("click", function() {
     const logIn = JSON.parse(localStorage.getItem("logindetails"))
     if (eMail.value === logIn.email && passWord.value === logIn.password) {
-        window.open("index.html")
+        window.open("afterindex.html")
         eMail.value = ""
         passWord.value = ""
         errorMessage.textContent = ""
