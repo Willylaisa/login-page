@@ -16,16 +16,16 @@ function openIndex() {
 
 logIn.addEventListener("click", function() {
     const logIn = JSON.parse(localStorage.getItem("logindetails"))
-    if (eMail.value === logIn.email && passWord.value === logIn.password) {
+    if (logIn.email === null || passWord.email === null) {
+        eMail.value = ""
+        passWord.value = ""
+        errorMessage.textContent = "Wrong email or password. Please sign up."
+    }
+    else if (eMail.value === logIn.email && passWord.value === logIn.password) {
         window.open("afterindex.html")
         eMail.value = ""
         passWord.value = ""
         errorMessage.textContent = ""
-    } 
-    else if (logIn.email == null || passWord.email == null) {
-        eMail.value = ""
-        passWord.value = ""
-        errorMessage.textContent = "Wrong email or password. Please sign up."
     }
     else {
         errorMessage.textContent = "Wrong email or password. Please sign up."
