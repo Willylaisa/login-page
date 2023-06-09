@@ -22,7 +22,7 @@ logIn.addEventListener("click", function() {
         passWord.value = ""
         errorMessage.textContent = ""
     } else {
-        errorMessage.textContent = "Wrong username or password. Please sign up."
+        errorMessage.textContent = "Wrong email or password. Please sign up."
     }
 })()
 
