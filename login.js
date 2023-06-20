@@ -14,13 +14,7 @@ function openIndex() {
 
 logIN.addEventListener("click", function() {
     const logIn = JSON.parse(localStorage.getItem("logindetails"))
-    if (logIn == null) {
-        eMail.value = ""
-        passWord.value = ""
-        errorMessage.textContent = "Invalid email address! Please sign up"
-    }
-
-    else if (eMail.value == "") {
+    if (eMail.value == "") {
         errorMessage.textContent = "Please enter your email address"
     }
 
@@ -28,8 +22,14 @@ logIN.addEventListener("click", function() {
         errorMessage.textContent = "Please enter your password"
     }
 
+    else if (logIn == null) {
+        eMail.value = ""
+        passWord.value = ""
+        errorMessage.textContent = "Invalid email address! Please sign up"
+    }
+
     else if (eMail.value === logIn.email && passWord.value === logIn.password) {
-        window.open("home.html")
+        window.open("afterindex.html")
         eMail.value = ""
         passWord.value = ""
         errorMessage.textContent = ""
@@ -38,7 +38,7 @@ logIN.addEventListener("click", function() {
     else {
         eMail.value = ""
         passWord.value = ""
-        errorMessage.textContent = "Wrong email or password. Please try again."
+        errorMessage.textContent = "Incorrect email or password. Please try again."
     }
 })
 
